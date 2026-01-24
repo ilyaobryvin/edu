@@ -1,0 +1,105 @@
+# =========================
+# Python: bytecode / caches
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+.cache/
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+
+# =========================
+# Packaging / build
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# Jupyter / IPython
+# =========================
+.ipynb_checkpoints/
+.profile_default/
+ipython_config.py
+
+# Optional: ignore notebooks output (if you commit notebooks, лучше не игнорить сами .ipynb)
+# *.ipynb
+
+# =========================
+# Data / artifacts (DS)
+# =========================
+data/
+datasets/
+raw/
+interim/
+processed/
+external/
+
+# Model artifacts / experiment outputs
+models/
+checkpoints/
+runs/
+mlruns/
+wandb/
+lightning_logs/
+tensorboard/
+tb_logs/
+logs/
+*.log
+
+# Large/binary artifacts
+*.parquet
+*.csv
+*.xlsx
+*.xls
+*.feather
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+*.env
+secrets.*
+*.key
+*.pem
+
+# =========================
+# IDEs / OS
+# =========================
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# =========================
+# Coverage / reports
+# =========================
+.coverage
+coverage.xml
+htmlcov/
+reports/
