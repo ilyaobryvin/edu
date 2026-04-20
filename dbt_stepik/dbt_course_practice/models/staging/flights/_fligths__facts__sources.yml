@@ -18,6 +18,14 @@ sources:
 
       - name: flights
         description: Информация о рейсах
+        loaded_at_field: actual_departure
+        freshness:
+          warn_after:
+            count: 4000
+            period: day
+          error_after:
+            count: 8000
+            period: day
 
         columns:
           - name: flight_id
