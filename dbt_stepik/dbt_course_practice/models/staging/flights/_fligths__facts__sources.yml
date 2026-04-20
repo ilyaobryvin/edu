@@ -1,0 +1,70 @@
+sources:
+  - name: demo_src
+    description: Данные об авиаперелетах
+
+    tables:
+      - name: boarding_passes
+        description: Посадочные талоны пассажиров на рейсы
+
+        columns:
+          - name: ticket_no
+            description: Номер билета пассажира
+          - name: flight_id
+            description: Уникальный идентификатор рейса
+          - name: boarding_no
+            description: Номер посадки на рейс
+          - name: seat_no
+            description: Номер места, указанного в посадочном талоне
+
+      - name: flights
+        description: Информация о рейсах
+
+        columns:
+          - name: flight_id
+            description: Уникальный идентификатор рейса
+          - name: flight_no
+            description: Номер рейса
+          - name: scheduled_departure
+            description: Плановая дата и время вылета
+          - name: scheduled_arrival
+            description: Плановая дата и время прилета
+          - name: departure_airport
+            description: Код аэропорта вылета
+          - name: arrival_airport
+            description: Код аэропорта прилета
+          - name: status
+            description: Текущий статус рейса
+          - name: aircraft_code
+            description: Код модели самолета, выполняющего рейс
+          - name: actual_departure
+            description: Фактическая дата и время вылета
+          - name: actual_arrival
+            description: Фактическая дата и время прилета
+
+      - name: ticket_flights
+        description: Связь билетов с рейсами и стоимость перелета
+
+        columns:
+          - name: ticket_no
+            description: Номер билета пассажира
+          - name: flight_id
+            description: Уникальный идентификатор рейса
+          - name: fare_conditions
+            description: Класс обслуживания по билету
+          - name: amount
+            description: Стоимость перелета по билету
+
+      - name: tickets
+        description: Данные о билетах и пассажирах
+
+        columns:
+          - name: ticket_no
+            description: Уникальный номер билета
+          - name: book_ref
+            description: Номер бронирования
+          - name: passenger_id
+            description: Идентификатор пассажира
+          - name: passenger_name
+            description: Имя и фамилия пассажира
+          - name: contact_data
+            description: Контактные данные пассажира
