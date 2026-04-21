@@ -1,0 +1,48 @@
+models:
+  - name: fct_bookings
+    description: Факты бронирования
+    docs:
+      show: true
+      node_color: red
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    
+    columns:
+      - name: book_ref
+        data_type: varchar(8)
+        constraints:
+        - type: not_null
+      - name: book_date
+        data_type: timestamptz
+      - name: total_amount
+        data_type: numeric(10,2)
+        constraints:
+          - type: check
+            expression: "total_amount > 0"
+
+
+  - name: fct_ticket_flights
+    description: Детализация перелетов - билет, рейс, тариф (Economy, Business, Comfort).
+    docs:
+      show: true
+      node_color: green
+    meta:
+      owner: "ilyaobryvin@gmail.com"
+    
+    columns:
+      - name: ticket_no
+        data_type: bpchar(13)
+        constraints:
+          - type: unique
+      - name: flight_id
+        data_type: int4
+      - name: fare_conditions
+        data_type: varchar(10)
+      - name: amount
+        data_type: numeric(10, 2)
+        constraints:
+          - type: check
+            expression: "amount > 0"
