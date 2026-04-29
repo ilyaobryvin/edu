@@ -1,0 +1,151 @@
+# Якоря (Anchors)
+yekaterinburg: &yekaterinburg
+  city: "Екатеринбург"
+  timezone: "UTC+5"
+  latitude: "56.8519"
+  longitude: "60.6122"
+
+moscow: &moscow
+  city: "Москва"
+  timezone: "UTC+3"
+  latitude: "55.7522"
+  longitude: "37.6156"
+
+saint_petersburg: &saint_petersburg
+  city: "Санкт-Петербург"
+  timezone: "UTC+3"
+  latitude: "59.9386"
+  longitude: "30.3141"
+
+# Список сотрудников
+employees:
+  - employee_1:
+      id: 1
+      geo: *yekaterinburg
+      username: "ivan_petrov"
+      info:
+        first_name: "Иван"
+        last_name: "Иванов"
+        middle_name: "Витальевич"
+        salary: 150000.00
+        birthday: "1990-03-15"
+        gender: "Мужской"
+      contacts:
+        email: "ivan_petrov@example.com"
+        phones: ["+79161234567", "+74951234567"]
+        social_networks:
+          vk: "ivan_petrov"
+          telegram: "@ivan_petrov"
+      status: true
+      job: "Разработчик Python"
+      education:
+        level: "Высшее"
+        degree: "Бакалавр"
+        institution: "Уральский федеральный университет"
+        faculty: "Институт радиоэлектроники и информационных технологий"
+        specialization: "Программная инженерия"
+        year: 2017
+  - employee_2:
+      id: 2
+      geo: *moscow
+      username: "maria_sidorova"
+      info:
+        first_name: "Мария"
+        last_name: "Сидорова"
+        middle_name: null
+        salary: 170000.00
+        birthday: "1985-07-22"
+        gender: "Женский"
+      contacts:
+        email: "maria_sidorova@example.com"
+        phones: ["+79169876543"]
+        social_networks:
+          vk: "maria_sidorova"
+          telegram: "@maria_sidorova"
+      status: false
+      job: "Разработчик Java"
+      education:
+        level: "Высшее"
+        degree: "Магистр"
+        institution: "Московский государственный университет"
+        faculty: "Факультет вычислительной математики и кибернетики"
+        specialization: "Прикладная математика и информатика"
+        year: 2009
+  - employee_3:
+      id: 3
+      geo: *saint_petersburg
+      username: "alex_volkov"
+      info:
+        first_name: "Алексей"
+        last_name: "Волков"
+        middle_name: null
+        salary: 190500.00
+        birthday: "1991-12-03"
+        gender: "Мужской"
+      contacts:
+        email: "alex@example.com"
+        phones: null
+        social_networks:
+          vk: "alex_volkov"
+          telegram: "@alex_volkov"
+      status: true
+      job: "Разработчик Scala"
+      education:
+        level: "Высшее"
+        degree: "Магистр"
+        institution: "Санкт-Петербургский государственный университет"
+        faculty: "Математико-механический факультет"
+        specialization: "Фундаментальная информатика и информационные технологии"
+        year: 2016
+  - employee_4:
+      id: 4
+      geo: *saint_petersburg
+      username: "olga"
+      info:
+        first_name: "Ольга"
+        last_name: "Иванова"
+        middle_name: "Андреевна"
+        salary: 115000.00
+        birthday: "1994-05-18"
+        gender: "Женский"
+      contacts:
+        email: "olga@example.com"
+        phones: ["+79165554433"]
+        social_networks:
+          vk: null
+          telegram: "@olga_ivanova"
+      status: true
+      job: "Разработчик Python"
+      education:
+        level: "Высшее"
+        degree: "Бакалавр"
+        institution: "ИТМО"
+        faculty: "Факультет программной инженерии и компьютерной техники"
+        specialization: "Информационные системы и технологии"
+        year: 2012
+  - employee_5:
+      id: 5
+      geo: *yekaterinburg
+      username: "dmitry_kuznetsov"
+      info:
+        first_name: "Дмитрий"
+        last_name: "Кузнецов"
+        middle_name: "Васильевич"
+        salary: 215000.00
+        birthday: "1978-09-12"
+        gender: "Мужской"
+      contacts:
+        email: "dmitry@example.com"
+        phones: ["+79167778899", "+74957778899"]
+        social_networks:
+          vk: "dmitry_kuznetsov"
+          telegram: "@dmitry_kuznetsov"
+      status: true
+      job: "Разработчик Java"
+      education:
+        level: "Высшее"
+        degree: "Аспирант"
+        institution: "Московский физико-технический институт"
+        faculty: "Факультет управления и прикладной математики"
+        specialization: "Прикладная математика и физика"
+        year: 2011

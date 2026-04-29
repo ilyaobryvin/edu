@@ -45,22 +45,9 @@ ipython_config.py
 # =========================
 # Data / artifacts (DS)
 # =========================
-data/
-datasets/
 raw/
-interim/
-processed/
-external/
 
 # Model artifacts / experiment outputs
-models/
-checkpoints/
-runs/
-mlruns/
-wandb/
-lightning_logs/
-tensorboard/
-tb_logs/
 logs/
 *.log
 
@@ -108,3 +95,5 @@ Thumbs.db
 coverage.xml
 htmlcov/
 reports/
+.virtual_documents/
+.virtual_documents/

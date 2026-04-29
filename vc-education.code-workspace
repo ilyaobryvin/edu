@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "[Сергей Матросов] Основы статистики и АБ тестирование",
+			"path": "[Сергей Матросов] Основы статистики и АБ тестирование"
+		},
+		{
+			"name": "ab testing",
+			"path": "karpov.courses/data_analyst_hard/ab testing"
+		},
+		{
+			"name": "pygame_project",
+			"path": "pygame_project"
+		},
+		{
+			"name": "test",
+			"path": "test"
+		},
+		{
+			"path": "test_pyqt"
+		},
+		{
+			"path": "dbt_stepik"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Инди-курс по HTML и CSS",
+		"notebook.experimental.generate": false,
+		"dbt.dbtPythonPathOverride": "C:\\Users\\ilyao\\JupyterLab\\education\\dbt_stepik\\.venv\\Scripts\\python.exe",
+		"dbt.queryLimit": 100,
+		"dbt.perspectiveTheme": "Vintage"
+	}
+}
