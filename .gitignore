@@ -23,6 +23,7 @@ pip-wheel-metadata/
 # PROJECTS
 # =========================
 /dbt_stepik/db.yaml
+/dbt_stepik/dbt_course/
 
 # =========================
 # Packaging / build
