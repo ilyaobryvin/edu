@@ -17,6 +17,8 @@ models:
         - type: not_null
       - name: book_date
         data_type: timestamptz
+      - name: book_ref_int
+        data_type: bigint
       - name: total_amount
         data_type: numeric(10,2)
         constraints:

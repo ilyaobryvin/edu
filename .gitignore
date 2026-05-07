@@ -9,6 +9,7 @@ __pycache__/
 .pytype/
 .ruff_cache/
 .cache/
+vc-education.code-workspace
 
 # =========================
 # Virtual environments

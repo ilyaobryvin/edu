@@ -1,8 +1,8 @@
 {% macro safe_select(table_name) %}
     {% if execute %}
 
-        {% set database = database or target.database %}
-        {% set schema = schema or target.schema %}
+        {% set database = target.database %}
+        {% set schema = target.schema %}
 
         {#
             relation для модели/таблицы, имя которой передали в table_name.
