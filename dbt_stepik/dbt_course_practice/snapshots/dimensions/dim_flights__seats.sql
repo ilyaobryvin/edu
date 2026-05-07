@@ -3,9 +3,9 @@
 {{
     config(
         target_schema='snapshot',
-        unique_key='aircraft_code',
+        unique_key="aircraft_code || '-' || seat_no",
         strategy='check',
-        check_cols=['seat_no','fare_conditions'],
+        check_cols=['fare_conditions'],
         dbt_valid_to_current="'5999-01-01'"
     )
 }}
