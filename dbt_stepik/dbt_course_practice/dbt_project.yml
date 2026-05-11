@@ -55,6 +55,3 @@ models:
     intermediate:
       +tags: 
         - 'intermediate'
-
-seeds:
-  dbt_course_practice:

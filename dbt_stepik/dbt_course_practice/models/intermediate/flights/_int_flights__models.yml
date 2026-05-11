@@ -48,3 +48,9 @@ models:
         constraints:
           - type: check
             expression: "amount > 0"
+
+  - name: fct_flights
+    tests:
+      - dbt_utils.equal_rowcount:
+          arguments:
+            compare_model: ref('stg_flights__flights')
