@@ -24,6 +24,8 @@ models:
         constraints:
           - type: check
             expression: "total_amount > 0"
+      - name: book_ref_key
+        data_type: text
 
 
   - name: fct_ticket_flights
