@@ -52,6 +52,7 @@ models:
             expression: "amount > 0"
 
   - name: fct_flights
+    description: Факты авиарейсов с плановыми и фактическими временами вылета и прилета, аэропортами, статусом и самолетом.
     tests:
       - dbt_utils.equal_rowcount:
           arguments:
