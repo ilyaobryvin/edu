@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',
-        icremental_strategy='merge',
+        incremental_strategy='merge',
         unique_key=['flight_id']
     )
 }}

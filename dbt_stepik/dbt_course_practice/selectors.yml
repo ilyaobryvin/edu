@@ -1,0 +1,4 @@
+selectors:
+  - name: incremental_models
+    description: "All incremental models"
+    definition: "config.materialized:incremental"
