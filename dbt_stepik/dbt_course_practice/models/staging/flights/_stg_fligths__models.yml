@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_flights__seats
+    tests:
+    - dbt_utils.unique_combination_of_columns:
+        combination_of_columns:
+          - seat_no
+          - aircraft_code
+
+    columns:
+      - name: seat_no
+        data_tests:
+          - not_null
+          - seat_no_pattern:
+              config:
+                severity: warn
+
+      - name: aircraft_code
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_flights__aircrafts')
+              field: aircraft_code
+
+      - name: fare_conditions
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Business', 'Comfort', 'Economy']
+  
+  - name: stg_flights__airports
+
+    columns:
+      - name: airport_code
+        description: Уникальный ID аэропорта. Содержит строго три латинские буквы, например DME.
+        data_tests:
+          - not_null
+          - unique
+          - airport_code_pattern:
+              config:
+                severity: warn
+      - name: airport_name
+      - name: city
+      - name: coordinates
+        data_tests:
+          - coordinates_valid:
+              config:
+                severity: warn
+      - name: timezone
