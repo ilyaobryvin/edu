@@ -1,0 +1,52 @@
+# Запуск юнит-теста по одной модели
+# dbt test -s "stg_flights__flights,test_type:unit"
+unit_tests:
+  - name: test_incremental_adds_flight_inside_100_day_window
+    description: "Новый перелет с датой 15.12.2024 должен попасть в инкрементальное обновление, если максимум в модели 01.01.2025"
+    model: stg_flights__flights
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: this
+        rows:
+          - {flight_id: 1, scheduled_departure: 2025-01-01T00:00:00+00:00}
+      - input: source('demo_src', 'flights')
+        rows:
+          - {flight_id: 2, scheduled_departure: 2024-12-15T00:00:00+00:00}
+    expect:
+      rows:
+        - {flight_id: 2, scheduled_departure: 2024-12-15T00:00:00+00:00}
+
+  - name: test_incremental_skips_flight_outside_100_day_window
+    description: "Новый перелет с датой 01.09.2024 не должен попасть в инкрементальное обновление, если максимум в модели 01.01.2025"
+    model: stg_flights__flights
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: this
+        rows:
+          - {flight_id: 1, scheduled_departure: 2025-01-01T00:00:00+00:00}
+      - input: source('demo_src', 'flights')
+        rows:
+          - {flight_id: 2, scheduled_departure: 2024-09-01T00:00:00+00:00}
+    expect:
+      rows: []
+
+  - name: test_incremental_updates_existing_flight_status
+    description: "Строка с тем же flight_id и новым status должна попасть в инкрементальное обновление"
+    model: stg_flights__flights
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: this
+        rows:
+          - {flight_id: 1, scheduled_departure: 2025-01-01T00:00:00+00:00, status: Scheduled}
+      - input: source('demo_src', 'flights')
+        rows:
+          - {flight_id: 1, scheduled_departure: 2025-01-01T00:00:00+00:00, status: Departed}
+    expect:
+      rows:
+        - {flight_id: 1, status: Departed}
